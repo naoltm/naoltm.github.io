@@ -1,0 +1,193 @@
+<!-- This file contains many elements adapted from the online tutoral -->
+<!-- on Bootstrap 4 as found here: https://www.w3schools.com/bootstrap4/default.asp -->
+
+<!-- Images source: -->
+<!-- jule.jpg taken from https://www.freepik.com/premium-vector/cartoon-successful-hairdresser_3951066.htm -->
+<!-- Erwind.jpb https://www.kijiji.ca/v-construction-trades-jobs/winnipeg/bicycle-mechanic/1499188319 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- The head should contain an appropriate title for your site -->
+<head>
+    <title>Module 4 - Labo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Style sheet (CSS) and JavaScript scripts necessary to use Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>    
+
+    <!-- Your own additional style sheet -->
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+</head>
+
+
+<body>
+
+    <!-- Medium size container, padding 3, margins 3, background dark, text is white -->
+    <!-- Should show the name of your company with an image or logo -->
+    <!-- Bootstrap has its own font for H1, H2, p, etc.  -->
+    <!-- Look in BS4 Typography https://www.w3schools.com/bootstrap4/bootstrap_typography.asp -->
+    <!-- Use your own CSS file to change those fonts if they do not correspond to your company's look -->
+    <div class="container-md p-3 my-3 border bg-white text-black">
+        <h1>FreshCutz<img src="image/straightrazor.png" width="100" height="75"></h1>
+    </div>
+
+    <div class="tab">
+        <button class="tablinks" onclick="document.getElementById('service').scrollIntoView();">Service</button>
+        <button class="tablinks" onclick="document.getElementById('accordion').scrollIntoView();">Book</button>
+        <button class="tablinks" onclick="document.getElementById('aboutus').scrollIntoView();">About us</button>
+        <button class="tablinks" onclick="document.getElementById('location').scrollIntoView();">Location</button>
+
+      </div>
+
+    <!-- When you have messages to tell, remember that center align is not always the best choice -->
+    <div class="container-md p-3 my-3 border bg-light text-black-50">
+        <h3>Look Great Feel Great!</h3>
+        <p class="text-center" >We aren't like any other barbershops. We have a great atmosphere, ensuring everyone that steps into our shop leaves looking and feeling great!</p>
+        <p class="text-center">For people of all ages, styles and genders!</p>
+    </div>
+
+
+    <!-- Bootstrap has different types of tables https://www.w3schools.com/bootstrap4/bootstrap_tables.asp -->
+    <!-- Might be (or not) useful to show some information to the user -->
+    <div id = "service" class="container">
+        <h2>Services</h2>
+        <p>Here is a list of services offered</p>            
+        <table class="table table-dark table-striped table-hover">
+            <thead>
+            <tr>
+                <th>Service</th>
+                <th>Price</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Haircut</td>
+                <td>$30</td>
+            </tr>
+            <tr>
+                <td>Haircut and beard</td>
+                <td>$35</td>
+            </tr>
+            <tr>
+                <td>Coloring</td>
+                <td>$60</td>
+            </tr>
+            <tr>
+                <td>Trim</td>
+                <td>$20</td>
+            </tr>
+            <tr>
+                <td>Wash and Cut</td>
+                <td>$40</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+      <!-- Collapsible with multiple items - accordion -->
+    <!-- https://www.w3schools.com/bootstrap4/bootstrap_collapse.asp -->
+    <!-- As we want to do a vertical navigation better suited for mobile design, an accordion pattern -->
+    <!-- could work well.  You can use other patterns too.  This is just an example. -->
+   
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header">
+                    <a class="card-link" data-toggle="collapse" href="#collapseService">Input the service you require</a>
+                </div>
+                <div id="collapseService" class="collapse show" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>Service: <input type="text" name="service"></p>
+                    </div>
+                </div>
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseDate">Choose a date</a>
+                </div>
+                <div id="collapseDate" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>What date?</p>
+                        <!-- Bootstrap has various input components. Some examples are given here: -->
+                        <!-- Component shown here: https://v4-alpha.getbootstrap.com/components/forms/#textual-inputs -->
+                        <div class="form-group row">
+                            <label for="dateTimeInput" class="col-2 col-form-label">Date and time</label>
+                            <div class="col-10">
+                                <input class="form-control" type="datetime-local" value="2023-03-20T13:45:00" id="dateTimeInput">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseClientInfo">Your contact info</a>
+                </div>
+                <div id="collapseClientInfo" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>First name: <input type="text" name="firstname"></p>
+                        <p>Last name: <input type="text" name="lastname"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+        
+    
+    <!-- Presenting the staff with cards: https://www.w3schools.com/bootstrap4/bootstrap_cards.asp -->
+    <!-- Card columns allows multiple cards next to each other -->
+    <!-- The first card's button doesn't go anywhere, it could be a modal --> 
+    <!-- My second card limits the information seen and uses collapsible to show more -->
+    <div class="container p-3">
+            <div class="card bg-white" style="width:200px">
+                <img class="card-img-top" src="image/barber1.jpg" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Luffy</h4>
+                    <p class="card-text">The fade king</p>
+                    <!-- collapsible part -->
+                    <a href="#profile" class="btn btn-primary" data-toggle="collapse">See Profile</a>
+                    <div id="profile" class="collapse p-3">
+                        <p>Owner of the shop and has been cutting hair for 20+ years </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container align-content-center">
+            <div class="card bg-white" style="width:200px">
+                <img class="card-img-top" src="image/barber2.jpg" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Zoro</h4>
+                    <p class="card-text">Our coloring specialist</p>
+                    <!-- collapsible part -->
+                    <a href="#profile" class="btn btn-primary" data-toggle="collapse">See Profile</a>
+                    <div id="profile" class="collapse p-3">
+                        <p>Lots of experience in the idustry and trusted by many to dye their hair without damaging it</p>
+                    </div>
+                </div>
+            </div>
+        </div><div class="container p-3">
+            <div class="card bg-white" style="width:200px">
+                <img class="card-img-top" src="image/barber3.jpg" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Robin</h4>
+                    <p class="card-text">The curly hair wizard</p>
+                    <!-- collapsible part -->
+                    <a href="#profile" class="btn btn-primary" data-toggle="collapse">See Profile</a>
+                    <div id="profile" class="collapse p-3">
+                        <p>Will have you looking better than you ever have </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id = "location" class="container bg-dark text-white" >
+            <h2>Location</h2>
+            <p>We are located at 87 LUTEKO JOYEVUSE, Ottawa, ON K1P 1B1</p>            
+            
+        </div>
+  
+</body>
+</html>
