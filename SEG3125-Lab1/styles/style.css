@@ -1,0 +1,32 @@
+body {
+    background-image: url("../image/background.jpg");
+}
+
+h1 {
+	font-size: 60px;
+	text-align: center;
+	margin: 0;
+	padding: 20px 0;
+	color: #ff2a00; 
+	text-shadow: 3px 3px 1px black;
+    font-family: 'Merienda';
+}
+
+h2{
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.questions{
+font-family: "Lucida Console", "Courier New", monospace;
+}
+
+#comments{
+    font-family: "Lucida Console", "Courier New", monospace;
+
+}
+#signature {
+    text-align: left;
+    color: rgb(255, 255, 255);
+    font-style: italic;
+    font-size: 75%;
+  }

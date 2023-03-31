@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+	<! IMPORTANT to use a CSS file - external >
+	<link href="styles/style.css" rel="stylesheet" type="text/css">
+    <title>Questionnaire Lab 1</title>
+  </head>
+  
+  <body>
+	<h1>Survey</h1>
+	<form id="myform" action="index.php" >
+	<br>
+	<br>
+	<h2>What do you think of the UI for the <a href="https://www.deskhero.ca">DeskHero</a> site?</h2>	
+	<br>
+	<br>
+	<! You should make your image clickable>
+	<a href="https://www.deskhero.ca/"><img src="image/DeskHero.png" alt="https://www.deskhero.ca" width="450" height="300"></a>
+	<br>
+	<br>
+	<div class="questions">
+	<h2> Personal Information </h2>
+	<p>First name: <input type="text" name="firstname"></p>
+	<p>Last name:   <input type="text" name="lastname"></p>
+	<br>
+	<br>
+		
+	</div>	
+		
+	<div class="questions">
+		<h2> Questions </h2>
+
+		<br>
+
+		1. Give me your first impressions of this webpage?
+		<br>
+		<textarea rows="5" cols="30"></textarea><br>
+
+		<br>
+
+		2. Does this site look professional?
+		<br>
+		<input type="radio" id="yes" name="improve" value="yes">
+		<label for="yes">Yes</label><br>
+		<input type="radio" id="no" name="improve" value="no">
+		<label for="no">No</label><br>
+
+		<br>
+
+		3. Your favourite design element of the webpage?
+		<br>
+		<input list="favDesign">
+
+		<datalist id="favDesign">
+		<option value="Colour scheme">
+		<option value="Images">
+		<option value="Layout">
+		<option value="Options">
+		</datalist><br>
+
+		<br>
+
+
+		4. What other shopping site does it feel most similar to?
+		<br>
+		<input type="checkbox" name="Site" value="Amazon">amazon.ca<br>
+		<input type="checkbox" name="Site" value="AliExpress">aliexpress.ca<br>
+		<input type="checkbox" name="Site" value="Walmart">walmart.ca<br>
+		
+		<br>
+		
+		5. Which Keyboard brand do you like the most?<br>
+		<select id="favorite">
+			<option value="Ducky" selected="selected">Ducky</option>
+			<option value="Keychron">Keychron</option>
+			<option value="Glorius">Glorius</option>
+		</select>
+	</div>
+	
+	<br>
+	<br>
+		
+	<p id = "comments">Any Comments on how you would improve the UI?: </p>
+	<textarea rows="5" cols="30"></textarea>
+			
+	<br>
+	<br>
+			
+	<button id="submitButton" type="button" class="block">
+		SUBMIT
+	</button>
+		
+	<p id="signature">Site designed by Naol Meherete</p>	
+	
+	</form>
+  </body>
+</html> 
